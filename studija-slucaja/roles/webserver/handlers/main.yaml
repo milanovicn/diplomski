@@ -1,0 +1,9 @@
+---
+
+- name: Install packages
+  yum:
+    name:
+      - git
+      - mysql
+#      - mariadb-connector
+    state: present

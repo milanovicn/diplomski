@@ -1,0 +1,13 @@
+---
+
+- name: Upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: Install packages
+  yum:
+    name:
+      - python3
+      - python3-pip
+    state: present

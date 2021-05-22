@@ -1,0 +1,7 @@
+---
+
+#roles: 
+- name: geerlingguy.java
+- name: gantsign.maven
+- name: geerlingguy.mysql
+- name: geerlingguy.nodejs

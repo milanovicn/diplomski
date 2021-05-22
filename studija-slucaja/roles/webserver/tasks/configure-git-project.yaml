@@ -1,0 +1,21 @@
+---
+
+- name: clone git project
+  git:
+    repo: 'git@github.com:milanovicn/ISA.git'
+    dest: /home/ansible-control/pharmacy-app
+    version: nina-diplomski
+    key_file: /root/.ssh/id_rsa
+
+- name: build and compile maven project
+  shell: /opt/maven/apache-maven-3.8.1/bin/mvn clean install > /home/ansible-control/logs/mvn-clean-install.log
+  args:
+    chdir:  /home/ansible-control/pharmacy-app/ISA-Backend
+  environment:
+      MAVEN_HOME: /opt/maven/apache-maven-3.8.1
+      JAVA_HOME: /usr/lib/jvm/java-11-openjdk-11.0.11.0.9-0.el8_3.x86_64
+      
+- name: install node modules
+  shell: npm i > /home/ansible-control/logs/npm-install.log
+  args:
+    chdir:  /home/ansible-control/pharmacy-app/ISA-Frontend

@@ -1,0 +1,14 @@
+---
+- hosts: webservers
+  remote_user: ansible-control
+  gather_facts: true
+  become: true
+  roles:
+      - base
+
+- hosts: webservers
+  remote_user: ansible-control
+  gather_facts: true
+  become: true
+  roles:
+      - webserver

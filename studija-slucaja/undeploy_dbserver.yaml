@@ -1,0 +1,10 @@
+---
+- hosts: dbservers
+  remote_user: ansible-control
+  gather_facts: true
+
+  tasks:
+    - name: Create a new database with name 'pharmacy'
+      community.mysql.mysql_db:
+        name: pharmacy
+        state: absent
