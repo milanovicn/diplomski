@@ -1,0 +1,9 @@
+  
+---
+
+- name: install mysql role
+  include_role:
+         name: geerlingguy.mysql
+         
+- name: expose port 3306
+  shell: firewall-cmd --zone=public --add-port=3306/tcp
