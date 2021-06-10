@@ -17,7 +17,6 @@
     name:
       - git
       - mysql
-#      - mariadb-connector
     state: present
 
 - name: set enviromental variables
